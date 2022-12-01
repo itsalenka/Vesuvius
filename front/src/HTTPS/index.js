@@ -1,4 +1,5 @@
 import axios from 'axios'
+import {refresh} from "./userApi";
 // import {refresh} from "./userAPI";
 
 const $host = axios.create({
@@ -27,29 +28,29 @@ const authInterceptor = config => {
 
     return config
 }
-//
-// $authHost.interceptors.request.use(authInterceptor)
-// $authHost.interceptors.response.use((config) => {return config}, async (error) => {
-//     const originalRequest = error.config
-//     if (error.response.status == 401){
-//         try {
-//             if (localStorage.getItem('refresh_token')) {
-//                 await refresh()
-//                 return $authHost.request(originalRequest)
-//             }
-//             else {
-//                 localStorage.clear()
-//                 window.location.href = '/login';
-//             }
-//         } catch (e){
-//             localStorage.clear()
-//             window.location.href = '/login';
-//         }
-//     }
-//     else {
-//         return error.response
-//     }
-// })
+
+$authHost.interceptors.request.use(authInterceptor)
+$authHost.interceptors.response.use((config) => {return config}, async (error) => {
+    const originalRequest = error.config
+    if (error.response.status == 401){
+        try {
+            if (localStorage.getItem('refresh_token')) {
+                await refresh()
+                return $authHost.request(originalRequest)
+            }
+            else {
+                localStorage.clear()
+                window.location.href = '/login';
+            }
+        } catch (e){
+            localStorage.clear()
+            window.location.href = '/login';
+        }
+    }
+    else {
+        return error.response
+    }
+})
 
 export {
     $host,

@@ -3,3 +3,9 @@
 /front/.idea
 /server/.idea
 /server/Security
+/front/node_modules
+/server/node_modules
+/front/.idea
+/front/.env
+/server/.env
+/server/.idea

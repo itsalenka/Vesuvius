@@ -11,13 +11,13 @@ import {
 import Requests from "./Page/Requests";
 import Login from "./Page/Login";
 import Registration from "./Page/Registration";
-import Company from "./Page/Company";
+import MyCompany from "./Page/MyCompany";
 import MyRequests from "./Page/MyRequests";
 import Home from "./Page/Home";
-import Drivers from "./Page/Drivers";
-import DriverEdit from "./Page/DriverEdit";
-import Trucks from "./Page/Trucks";
-import TruckEdit from "./Page/TruckEdit";
+import MyDrivers from "./Page/MyDrivers";
+import DriverPage from "./Page/DriverPage";
+import MyTrucks from "./Page/MyTrucks";
+import TruckPage from "./Page/TruckPage";
 import RequestPage from "./Page/RequestPage"
 import MyAccount from "./Page/MyAccount";
 
@@ -26,10 +26,6 @@ export const authRoutes = [
     {
         path: REQUESTPAGE_ROUTE + '/:id',
         Component: RequestPage
-    },
-    {
-        path: MYCOMPANY_ROTE,
-        Component: Company
     },
     {
         path: MYACCOUNT_ROTE,
@@ -44,19 +40,23 @@ export const authRoutes = [
 export const carrierRoutes = [
     {
         path: MYDRIVERS_ROUTE,
-        Component: Drivers
+        Component: MyDrivers
+    },
+    {
+        path: MYCOMPANY_ROTE,
+        Component: MyCompany
     },
     {
         path: MYDRIVERS_ROUTE + '/:id',
-        Component: DriverEdit
+        Component: DriverPage
     },
     {
         path: MYTRUCKS_ROUTE,
-        Component: Trucks
+        Component: MyTrucks
     },
     {
         path: MYTRUCKS_ROUTE + '/:id',
-        Component: TruckEdit
+        Component: TruckPage
     }
 ]
 
@@ -78,4 +78,11 @@ export const publicRoutes = [
         Component: Home
     }
 
+]
+
+export const customerRoutes = [
+    {
+        path: MYCOMPANY_ROTE,
+        Component: MyCompany
+    }
 ]

@@ -3,7 +3,7 @@ import {Context} from "../index";
 import {Button, Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {
     HOME_ROUTE,
-    LOGIN_ROUTE, MYACCOUNT_ROTE, MYCOMPANY_ROTE,
+    LOGIN_ROUTE, MYACCOUNT_ROTE, MYCOMPANY_ROTE, MYDRIVERS_ROUTE, MYREQUESTS_ROUTE, MYTRUCKS_ROUTE,
     REQUESTS_ROUTE
 } from "../consts";
 import {useNavigate} from "react-router-dom";
@@ -14,7 +14,7 @@ import {useTranslation} from "react-i18next";
 
 
 const NavBar = observer(() => {
-    //const {user} = useContext(Context)
+    const {user} = useContext(Context)
     const { t, i18n } = useTranslation();
     const navigate = useNavigate()
 
@@ -34,13 +34,26 @@ const NavBar = observer(() => {
                         <Nav className="me-auto">
                             <NavDropdown title={t('More')} id="basic-nav-dropdown" flip="true" align="end">
                                 <NavDropdown.Item href={REQUESTS_ROUTE} rel="nofollow">{t('Search request')}</NavDropdown.Item>
-                                {/*{!user.isAuth ?*/}
-                                <NavDropdown.Item href={LOGIN_ROUTE} rel="nofollow">{t('Login')}</NavDropdown.Item>
-                                    {/*:*/}
-                                <NavDropdown.Item href={MYACCOUNT_ROTE} rel="nofollow">{t('My account')}</NavDropdown.Item>
-                                <NavDropdown.Item href={MYCOMPANY_ROTE} rel="nofollow">{t('My company')}</NavDropdown.Item>
-                                {/*}*/}
-                            </NavDropdown>
+                                    {!user.isAuth ?
+                                        <NavDropdown.Item href={LOGIN_ROUTE} rel="nofollow">{t('Login')}</NavDropdown.Item>
+                                            :
+                                        <>
+                                            <NavDropdown.Item href={MYACCOUNT_ROTE} rel="nofollow">{t('My account')}</NavDropdown.Item>
+                                            <NavDropdown.Item href={MYREQUESTS_ROUTE} rel="nofollow">{t('My requests')}</NavDropdown.Item>
+                                            {user.userRole != 'DRIVER' ?
+                                                <NavDropdown.Item href={MYCOMPANY_ROTE} rel="nofollow">{t('My company')}</NavDropdown.Item>
+                                                : <></>
+                                            }
+                                            {user.userRole == 'CARRIER' ?
+                                                <>
+                                                    <NavDropdown.Item href={MYTRUCKS_ROUTE} rel="nofollow">{t('My trucks')}</NavDropdown.Item>
+                                                    <NavDropdown.Item href={MYDRIVERS_ROUTE} rel="nofollow">{t('My drivers')}</NavDropdown.Item>
+                                                </>
+                                                    : <></>
+                                            }
+                                        </>
+                                    }
+                                </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
                 </Nav>

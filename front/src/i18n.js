@@ -19,6 +19,7 @@ const resources = {
             "Login": "Login",
             "My account": "My account",
             "My company": "My company",
+            "My requests": "My requests",
 
 
         }
@@ -36,6 +37,7 @@ const resources = {
             "Login": "Войти",
             "My account": "Мой аккаунт",
             "My company": "Моя компания",
+            "My requests": "Мои заявки",
 
 
         }

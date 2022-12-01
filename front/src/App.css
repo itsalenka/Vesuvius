@@ -1,0 +1,264 @@
+.App {
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.App-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  background-color: #000;
+  border: 2px solid #33044b;
+  border-radius: 100%;
+  user-select: none;
+  transform: translate(-50%, -50%);
+/*&:hover {*/
+/*   z-index: 1;*/
+/* }*/
+}
+
+.map-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.map-container iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.form-check-input:checked{
+  border-color: #a6c !important;
+  background-color: #a6c !important;
+  color: #a6c !important;
+}
+
+.form-check-input{
+  border-bottom: 1px solid #a6c !important;
+  box-shadow: 0 1px 0 0 #a6c !important;
+}
+
+.md-form .prefix.active{
+  color: #a6c !important;
+}
+.md-form label{ color: #33044b !important;}
+.md-form label.active{ color: #a6c !important;}
+
+.md-form input:focus, textarea:focus {
+  border-bottom: 1px solid #a6c !important;
+  box-shadow: 0 1px 0 0 #a6c !important;
+}
+
+.md-form input, textarea {
+  color: #33044b !important;
+}
+
+.filterForm input{
+  color: #33044b !important;
+}
+.filterForm label{ color: #33044b !important;}
+
+.link-auth{
+  color: #a6c;
+}
+
+.link-auth:hover{
+  color: #33044b;
+}
+
+.map-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.map-container iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.filterContainer{
+  display: flex;
+  flex-direction: column;
+  height: 88vh;
+}
+
+.filter{
+  flex-grow: 1;
+}
+
+.icon{
+  color: #a6c !important;
+}
+
+.purpleButton{
+  color: #33044b;
+  background-color: #a6c !important;
+}
+
+.navbar-brand,
+.navbar-nav a {
+  font-family: 'Segoe UI', serif;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 56px;
+  height: 56px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 33px;
+}
+
+.form-select {
+  color: #33044b;
+  background-color: #212121;
+}
+
+.form-select:focus{
+  border: 1px solid #a6c !important;
+  box-shadow: 0 1px 0 0 #a6c !important;
+}
+
+.option-form:focus{
+  background-color: #a6c !important;
+  color: #33044b;
+}
+
+.notification-wrapper {
+  z-index: 9;
+  position: fixed;
+  margin-top: 85px;
+  top: 10px;
+  right: 10px;
+  width: 300px;
+}
+
+.notification-item {
+  background-color: #282c34;
+  box-shadow: 0 0 10px rgba(0,0,0, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  animation: SlideLeft 0.4s;
+  animation-fill-mode: forwards;
+  width: 300px;
+}
+
+@keyframes SlideLeft {
+  0% {
+    margin-left: 120%;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes SlideRight {
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: 120%;
+  }
+}
+
+.notification-item.exit {
+  animation: SlideRight 0.4s;
+  animation-fill-mode: forwards;
+}
+
+.notification-item p {
+  margin: 0;
+  padding: 10px;
+}
+
+.notification-item .bar {
+  height: 10px;
+}
+
+.notification-item.success .bar {
+  background-color: #65d266;
+}
+
+.notification-item.error .bar {
+  background-color: red;
+}
+
+.backImg {
+  backgroundPosition: 'center';
+  backgroundSize: 'cover';
+  backgroundRepeat: 'no-repeat';
+}
+
+.whiteText {
+  color: ghostwhite;
+}
+
+.btn-brand{
+  color: white !important;
+  background-color: #33044b !important;
+}
