@@ -72,9 +72,13 @@ module.exports = {
 
     getById: async (req, res, next) => {
         const data = await requestService.findById(req.params.id)
-        const companyCarrier = await companyService.getByIdCompany(data.dataValues.carrierId)
-        const userCarrier = await userService.getUserCarrier(data.dataValues.carrierId)
-        let dataDto = new AllRequestDto(data.dataValues, companyCarrier.dataValues, userCarrier.dataValues, req.user.role, req.user.id, req.user.company)
+        const companyCarrier = null
+        const userCarrier = null
+        if(data.dataValues.carrierId) {
+            await companyService.getByIdCompany(data.dataValues.carrierId)
+            await userService.getUserCarrier(data.dataValues.carrierId)
+        }
+        let dataDto = new AllRequestDto(data, companyCarrier, userCarrier, req.user.role, req.user.id, req.user.company)
         return res.json(dataDto)
     }
 }

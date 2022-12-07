@@ -12,14 +12,14 @@
 //   scope: GMAIL_SCOPES,
 // });
 // console.log( url)
-//
+
 const { google } = require('googleapis');
 const path = require('path');
 const fs = require('fs');
 const credentials = require('./credentials.json');
 
 // Replace with the code you received from Google
-const code = '4/0AfgeXvt7_QjXbqSbLtaN9AOn4Iw3J9_Ar2PK-GwV90Q1yWeJ4MkwyIskDTwme8M_3GdR4g';
+const code = '4/0AfgeXvtE5pRzvTt5hVnKq3WOmPh-V_xoiPO2qpTKyue0dRY6jvcSED7lD-4QflQbK_Uy0w';
 const { client_secret, client_id, redirect_uris } = credentials.installed;
 const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uris[0]);
 

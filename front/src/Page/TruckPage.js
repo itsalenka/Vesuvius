@@ -194,19 +194,19 @@ const TruckPage = observer(() => {
                     </div>
                 </div>
                 <div className="d-flex justify-content-end">
-                    <Button variant="outline-secondary" className="px-4" onClick={handleShowDrivers}>
+                    <Button variant="outline-secondary" className="mx-4" onClick={handleShowDrivers}>
                         Set/change driver
                     </Button>
                     {truck.driver &&
-                        <Button variant="outline-secondary" className="px-4" onClick={deleteDriver}>
+                        <Button variant="outline-secondary" className="mx-4" onClick={deleteDriver}>
                             Delete driver
                         </Button>
                     }
-                    <Button variant="brand" onClick={handleShowForm}>
+                    <Button variant="brand"className="mx-4"  onClick={handleShowForm}>
                         Update
                         <MDBIcon far icon="paper-plane" className="ml-1" />
                     </Button>
-                    <Button variant="outline-secondary" className="px-4" onClick={handleDelete}>
+                    <Button variant="outline-secondary" className="mx-4" onClick={handleDelete}>
                         Delete
                     </Button>
                 </div>

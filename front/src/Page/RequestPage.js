@@ -293,38 +293,38 @@ const RequestRage = observer(() => {
                                 Unloading: {request.finishUnload}</Typography>
                         }
                         {!request.carrier && user.userRole === 'CARRIER' &&
-                            <Button variant={"outline-secondary"} className="px-4" onClick={handleShowDrivers}>
+                            <Button variant={"outline-secondary"} className="mx-4" onClick={handleShowDrivers}>
                                 Accept
                             </Button>
                         }
                         {request.customer && request.customer.id == user.userId &&
-                            <Button variant={"outline-secondary"} className="px-4" onClick={Delete}>
+                            <Button variant={"outline-secondary"} className="mx-4" onClick={Delete}>
                                 Delete
                             </Button>
                         }
                         {request.driver && request.driver.id == user.userId &&
                             <>
                                 {!request.startLoad ?
-                                    <Button variant={"outline-secondary"} className="px-4" onClick={StartLoad}>
+                                    <Button variant={"outline-secondary"} className="mx-4" onClick={StartLoad}>
                                         Start Loading
                                     </Button>
                                     :
                                     <>
                                         {!request.finishLoad ?
-                                            <Button variant={"outline-secondary"} className="px-4" onClick={FinishLoad}>
+                                            <Button variant={"outline-secondary"} className="mx-4" onClick={FinishLoad}>
                                                 Finish Loading
                                             </Button>
                                             :
                                             <>
                                                 {!request.startUnload ?
-                                                    <Button variant={"outline-secondary"} className="px-4"
+                                                    <Button variant={"outline-secondary"} className="mx-4"
                                                             onClick={StartUnload}>
                                                         Start Unloading
                                                     </Button>
                                                     :
                                                     <>
                                                         {!request.finishUnload &&
-                                                            <Button variant={"outline-secondary"} className="px-4"
+                                                            <Button variant={"outline-secondary"} className="mx-4"
                                                                     onClick={FinishUnload}>
                                                                 Finish Unloading
                                                             </Button>

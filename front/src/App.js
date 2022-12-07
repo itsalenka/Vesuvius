@@ -10,9 +10,9 @@ import {observer} from "mobx-react-lite";
 const App = observer(() => {
     const {user} = useContext(Context)
 
-    useEffect(() => {
-        user.check()
-    }, [])
+    // useEffect(() => {
+    //     user.check()
+    // }, [])
 
     return (
         <BrowserRouter>

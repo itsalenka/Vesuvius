@@ -25,12 +25,12 @@ const NavBar = observer(() => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Nav className="ml-auto">
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            <NavDropdown title={t('Language')} id="basic-nav-dropdown"  flip="true" align="end">
-                                <NavDropdown.Item onClick={() => i18n.changeLanguage("en")}>{t('English')}</NavDropdown.Item>
-                                <NavDropdown.Item onClick={() => i18n.changeLanguage("ru")}>{t('Russian')}</NavDropdown.Item>
-                            </NavDropdown>
-                        </Nav>
+                        {/*<Nav className="me-auto">*/}
+                        {/*    <NavDropdown title={t('Language')} id="basic-nav-dropdown"  flip="true" align="end">*/}
+                        {/*        <NavDropdown.Item onClick={() => i18n.changeLanguage("en")}>{t('English')}</NavDropdown.Item>*/}
+                        {/*        <NavDropdown.Item onClick={() => i18n.changeLanguage("ru")}>{t('Russian')}</NavDropdown.Item>*/}
+                        {/*    </NavDropdown>*/}
+                        {/*</Nav>*/}
                         <Nav className="me-auto">
                             <NavDropdown title={t('More')} id="basic-nav-dropdown" flip="true" align="end">
                                 <NavDropdown.Item href={REQUESTS_ROUTE} rel="nofollow">{t('Search request')}</NavDropdown.Item>

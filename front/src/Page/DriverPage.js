@@ -119,10 +119,10 @@ const DriverPage = observer(() => {
                     </>
                 }
                 <div className="d-flex justify-content-end">
-                    <Button variant="outline-secondary" className="px-4" onClick={handleShowTrucks}>
+                    <Button variant="outline-secondary" className="mx-4" onClick={handleShowTrucks}>
                         Set/change truck
                     </Button>
-                    <Button variant="outline-secondary" className="px-4" onClick={handleDelete}>
+                    <Button variant="outline-secondary" className="mx-4" onClick={handleDelete}>
                         Delete
                     </Button>
                 </div>
